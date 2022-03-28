@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exercício 04 - Consumo médio de combustível</title>
+
+	<style type="text/css">
+		body {
+			font-family:  arial;
+		}
+
+		input, button {
+			padding: 5px;
+		}
+
+		#result {
+			font-family: consolas;
+			visibility: hidden;
+		}
+	</style>
+
+	<script>
+		function consumoMedio() {
+            var km = parseFloat(document.getElementById('km').value)
+            var l = parseFloat(document.getElementById('l').value)
+
+            var consumoMedio = km / l
+
+            document.getElementById('result').style.visibility = 'visible'
+            document.getElementById('mostrarConsumo').innerHTML = consumoMedio.toFixed(2)
+        }
+	</script>
+</head>
+<body>
+	<h2>Exercício 04 - Consumo médio de combustível</h2>
+
+	<form autocomplete="off">
+		<input type="number" id="km" step="0.1" placeholder="Distância percorrida (Km)">
+        
+        <br><br>
+
+        <input type="number" id="l" step="0.1" placeholder="Gasto de combustível (L)">
+	</form>
+    <br>
+	<button onclick="consumoMedio()">Calcular</button>
+
+	<div id="result">
+		<p>Consumo médio: <span id="mostrarConsumo"></span>Km por litro</p>
+	</div>
+
+</body>
+</html>
